@@ -5,22 +5,40 @@ html {
 
 img.center {
     display: block;
-    width: 50%;
+    width: 30%;
     margin: 0 auto;
 }
 div {
     margin: auto;
-    width: 500px;
+    width: 600px;
 }
 
 p {
-    text-align: center;
+    text-align: justify;
+}
+
+p span.name {
+    color: red;
+}
+
+td.test {
+    color: red;
 }
 
 h1 {
     text-align: center;
     color: black;
 }
+
+div.test {
+    color: orange;
+}
+
+h2 span.test2 {
+    color: blue;
+}
+
+.name
 
 h2 {
     margin-left: 10px;
