@@ -3,48 +3,73 @@
 <head>
     <link rel="stylesheet" href="styles/profileStyle.css">
     <meta charset="UTF-8">
-    <title>My Profile</title>
+    <title>Welcome to my first page</title>
 </head>
 <body>
-    <h1>Welcome to my profile</h1>
-    <img class="center" src="images/profile.jpg" alt="profileImg">
-    <div>
-            <p>My name is <span class="name">Roongpetch Kunthakuldusadee</span>  I'm a student in <a href="https://www.en.kku.ac.th/web/coe/" target="_blank">Department of Computer Engineering Khon Kaen University</a>. These are <a href="qoute.html">my favorite qoutes</a>. I'm currently taking <a href="qoute.html">these courses</a></p>
-    </div>
-    <div class="test">
-            <h2 class="test2">My <span class="test2">courses</span> </h2>
-            <table class="w3-table">
-                <tr>
-                    <th>Course ID</th>
-                    <th>Course Name</th>
-        
-                </tr>
-                <tr>
-                    <td class="test">049031</td>
-                    <td>MULTICULTURALISM</td>
-                </tr>
-                <tr>
-                    <td>049042</td>
-                    <td>RESEARCH APPLICATIONS FOR PROBLEM SOLVING</td>
-                </tr>
-                <tr>
-                    <td>EN842007</td>
-                    <td>Introduction to Discrete Mathematics</td>
-                </tr>
-                <tr>
-                    <td>EN842101</td>
-                    <td>3D Modeling and Animation</td>
-                </tr>
-                <tr>
-                    <td>EN842300</td>
-                    <td>Interactive Web Programming</td>
-                </tr>
-                <tr>
-                    <td>SC401207</td>
-                    <td>Calculus for Engineering II</td>
-                </tr>
-            </table>
-    </div>
+    <div class="inner_profile">
+        <h1>Welcome to my first page</h1>
+        <img src="images/profile.jpg" alt="profile_img">
+        <p class="profile">
+            My name is Roongpetch Kunthakuldusadee I'm a student in 
+            <a class="department" href="https://www.en.kku.ac.th/web/coe/" target="_blank">Department of Computer Engineering, </a> 
+            <a class="faculty" href="https://www.en.kku.ac.th/" target="_blank">Faculty of Engineering</a> 
+            <a class="university" href="https://www.kku.ac.th/" target="_blank">Khon Kaen University</a>
+             These are 
+             <a class="quote" href="#quote">my favorite quotes</a> I'm currently taking 
+             <a class="course" href="#course">these courses</a>
+        </p>
+        <h2 id="course">
+            My courses
+        </h2>
+        <table>
+            <tr>
+                <th>Course ID</th>
+                <th>Course Name</th>
     
+            </tr>
+            <tr>
+                <td>049031</td>
+                <td>MULTICULTURALISM</td>
+            </tr>
+            <tr>
+                <td>049042</td>
+                <td>RESEARCH APPLICATIONS FOR PROBLEM SOLVING</td>
+            </tr>
+            <tr>
+                <td>EN842007</td>
+                <td>Introduction to Discrete Mathematics</td>
+            </tr>
+            <tr>
+                <td>EN842101</td>
+                <td>3D Modeling and Animation</td>
+            </tr>
+            <tr>
+                <td>EN842300</td>
+                <td>Interactive Web Programming</td>
+            </tr>
+            <tr>
+                <td>SC401207</td>
+                <td>Calculus for Engineering II</td>
+            </tr>
+        </table>
+
+        <h2 id="quote">
+            My favorite quotes
+        </h2>
+        <ul>
+            <li>"The true meaning of life is to plant trees, under whose shade you do not expect to sit." <span class="trail">-Nelson Henderson</span></li>
+            <li>"ชีวิตที่ดีที่สุดคือสงบ เย็น และเป็นประโยชน์" <span class="trail">-ท่านพุทธทาสภิ</span> </li>
+        </ul>
+
+        <h2>
+            Your Comment is Welcome
+        </h2>
+
+        <p class="form">What do you think about this lab?</p>
+
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+
+        <button>Submit</button>
+    </div>
 </body>
 </html>

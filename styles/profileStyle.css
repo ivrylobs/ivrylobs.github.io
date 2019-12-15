@@ -3,47 +3,86 @@ html {
     background-color: darkslategray;
 }
 
-img.center {
-    display: block;
-    width: 30%;
-    margin: 0 auto;
-}
-div {
-    margin: auto;
+div.outer {
     width: 600px;
+    margin: auto;
 }
 
-p {
-    text-align: justify;
-}
-
-p span.name {
-    color: red;
-}
-
-td.test {
-    color: red;
+div.inner_profile {
+    margin: auto;
+    width: 560px;
 }
 
 h1 {
     text-align: center;
-    color: black;
+    color: aliceblue;
 }
 
-div.test {
-    color: orange;
+img {
+    margin-left: 60px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 200px;
+    border-radius: 50%;
 }
 
-h2 span.test2 {
-    color: blue;
+p.profile {
+    padding-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 240px;
+    text-align: left;
+    color: azure;
 }
 
-.name
+a.department {
+    color: greenyellow;
+}
+
+a.faculty {
+    color: chocolate;
+}
+
+a.university {
+    color: peru;
+}
+
+a.quote {
+    color: aqua;
+}
+
+a.course {
+    color: aquamarine;
+}
 
 h2 {
-    margin-left: 10px;
+    color: aquamarine;
 }
 
 table {
-    margin-left: 10px;
+    color: aliceblue;
+}
+
+th {
+    color: aqua;
+}
+
+li {
+    color: aliceblue;
+}
+
+li span.trail {
+    color: chartreuse;
+}
+
+p.form {
+    color: aliceblue;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    display: block;
 }
