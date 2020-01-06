@@ -1,0 +1,30 @@
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+div.menu {
+    margin: auto;
+  
+    padding-left: 20px;
+    height: 500px;
+    width: 230px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+div.menu_link {
+    margin-top: 100px;
+    text-align: left;
+}
+
+h2 {
+    line-height: 10px;
+}
+
+a {
+    text-decoration: none;
+    line-height: 50px;
+    display: block;
+    color: dimgray;
+}
