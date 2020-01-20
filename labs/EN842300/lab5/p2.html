@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        background-color: aquamarine;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: inline-block;
+        height: 50px;
+        text-align: center;
+        border-radius: 20px;
+        border: cadetblue solid;
+        -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+        -moz-box-shadow: 3px 3px 5px 6px #ccc;
+        box-shadow: 3px 3px 5px 6px #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clickableDiv">
+      <p id="nameDisplay">PLAYER 1: UNKNOWN</p>
+    </div>
+
+    <script>
+        
+      let clickableDiv = document.getElementById("clickableDiv");
+      let displayParagraph = document.getElementById("nameDisplay");
+
+      clickableDiv.onclick = function() {
+        let addingName = prompt("Enter new name", "");
+        displayParagraph.innerHTML = "PLAYER 1: " + addingName.toUpperCase();
+      };
+
+
+    </script>
+  </body>
+</html>
