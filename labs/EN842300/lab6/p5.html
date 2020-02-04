@@ -1,42 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <label for="">Name (max 10 characters):</label>
-    <input id="nameText" type="text"><br>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+	<body>
+		<label for="">Name (max 10 characters):</label>
+		<input id="nameText" type="text" /><br />
 
-    <label for="">Age (from 1 to 100):</label>
-    <input id="ageText" type="text"><br>
+		<label for="">Age (from 1 to 100):</label>
+		<input id="ageText" type="text" /><br />
 
-    <label for="">E-mail:</label>
-    <input id="emailText" type="text"><br>
+		<label for="">E-mail:</label>
+		<input id="emailText" type="text" /><br />
 
-    <button id="submitButton">Submit</button>
+		<button id="submitButton">Submit</button>
 
-    <script>
-        let nameText = document.getElementById("nameText")
-        let ageText = document.getElementById("ageText")
-        let emailText = document.getElementById("emailText")
-        let submitButton = document.getElementById("submitButton")
+		<script>
+			let nameText = document.getElementById("nameText");
+			let ageText = document.getElementById("ageText");
+			let emailText = document.getElementById("emailText");
+			let submitButton = document.getElementById("submitButton");
 
-        function checkEmail() {
+			function checkEmail(word) {
+				var checkState = false;
+				if (word.value.includes("@")) {
+                    if (word.value[0] == "@" || word.value.substr(word.value.length - 1) == "@") {
+						checkState = true;
+					}
+				} else {
+                    checkState = true
+				}
 
-        }
+				return checkState;
+			}
 
-        submitButton.onclick = function() {
+			submitButton.onclick = function() {
+				//To prevent an error of checking empty value check field empty first.
 
-            if (nameText.value.length >= 10) {
-                alert("The name must be at most 10 characters")
-            } else if (isNaN(ageText.value) || ageText.value < 1 || ageText.value > 100) {
-                alert("The age must be a number from 1 to 100")
-            }
-        }
-
-    </script>
-</body>
+				if (
+					nameText.value != "" &&
+					ageText.value != "" &&
+					emailText.value != ""
+				) {
+					if (nameText.value.length > 10) {
+						alert("The name must be at most 10 characters");
+					} else if (
+						isNaN(ageText.value) ||
+						ageText.value < 1 ||
+						ageText.value > 100
+					) {
+						alert("The age must be a number from 1 to 100");
+					} else if (checkEmail(emailText)) {
+						alert("Not a valid e-mail format or it does not have @");
+					} else {
+                        alert("You have submitted your information!")
+                    }
+				} else {
+					alert("Please fill all fields.");
+				}
+			};
+		</script>
+	</body>
 </html>
