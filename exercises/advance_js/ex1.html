@@ -7,22 +7,24 @@
 		<title>Document</title>
 	</head>
 	<body>
-        <button id="demoButton">Click On Me</button>
-        <input id="textBox" type="text">
-        <script>
-            let btn = document.getElementById("demoButton")
-            let txtBox = document.getElementById("textBox")
-         
-            txtBox.onfocus = function() {
-                txtBox.value = "Please remove me"
-            }
-            btn.onfocus = function() {
-                txtBox.style.color = "Black"
-            }
-            btn.onclick = function() {
-                alert("Get done")
-                console.log("asdfasdf")
-            }
-        </script>
-    </body>
+		<button>Change color</button>
+		<script>
+			var btn = document.querySelector("button");
+			function random(number) {
+				return Math.random() * (255-0) + 0
+			}
+			btn.onclick = function() {
+				var rndCol =
+					"rgb(" +
+					random(255) +
+					"," +
+					random(255) +
+					"," +
+					random(255) +
+					")";
+
+				document.body.style.backgroundColor = rndCol;
+			};
+		</script>
+	</body>
 </html>
