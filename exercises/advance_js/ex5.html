@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<button id="jsonButton">Download JSON</button>
+
+		<script>
+            var jsonButton = document.getElementById("jsonButton");
+            
+			//Create tool needed for download JSON file from localhost.
+			var jsonLocation =
+				"http://localhost:5500/exercises/advance_js/example.json";
+			var request = new XMLHttpRequest();
+
+            //Downloading
+			request.open("GET", jsonLocation);
+			request.responseType = "json";
+			request.send();
+
+            request.onload = function() {
+                
+                for(var i = 0; i < request.response["tutorials"].length; i++) {
+
+                    var header = request.response["tutorials"][i]["display"]
+                    var link = request.response["tutorials"][i]["url"]
+
+                    document.write('<a href="' + link + '">' + header + '</a><br>')
+
+                }
+            }
+
+		</script>
+	</body>
+</html>
