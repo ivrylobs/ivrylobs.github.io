@@ -28,23 +28,17 @@
             var rightAnswer = answers[0];
 			var wrongAnswer1 = answers[1];
             var wrongAnswer2 = answers[2];
-            
+
             rightAnswer.addEventListener("click", (e) => {
                 e.target.className = "right-answer"
-                wrongAnswer1.className = "wrong-answer"
-                wrongAnswer2.className = "wrong-answer"
             })
 
             wrongAnswer1.addEventListener("click", (e) => {
                 e.target.className = "wrong-answer"
-                rightAnswer.className = "right-answer"
-                wrongAnswer2.className = "wrong-answer"
             })
 
             wrongAnswer2.addEventListener("click", (e) => {
                 e.target.className = "wrong-answer"
-                rightAnswer.className = "right-answer"
-                wrongAnswer1.className = "wrong-answer"
             })
 		</script>
 	</body>
