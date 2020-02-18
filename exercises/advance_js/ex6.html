@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var placeAPI = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants%20in%20Khon%20Kaen"
+        var apiKey = "key=AIzaSyCIJJY4JQEUpGIUoZ4B_inlgM1vH6UTvIY"
+        var requestAPI = new XMLHttpRequest()
+        var orderedList = document.createElement("ol")
+
+        //Request API
+        requestAPI.open("GET", placeAPI + "&" + apiKey)
+        requestAPI.responseType = "json"
+        requestAPI.send()
+
+        requestAPI.onload = function() {
+            var response = requestAPI.response.results
+
+            for(var i = 0; i < response.length; i++) {
+
+                //HTML Elements
+                var listItem = document.createElement("li")
+                var textName = document.createElement("p")
+                var textLocation = document.createElement("p")
+
+                //Text components
+                var lat = response[i].geometry.location.lat
+                var lng = response[i].geometry.location.lng
+
+                //Append text
+                textName.textContent = "name = " + response[i].name
+                textLocation.textContent = "Location = " + lat + " " + lng
+                
+                //Append elements
+                listItem.appendChild(textName)
+                listItem.appendChild(textLocation)
+                orderedList.appendChild(listItem)
+            }
+
+            //Append to body
+            document.body.appendChild(orderedList)
+        }
+    </script>
+</body>
+</html>
