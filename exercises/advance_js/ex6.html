@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <ifmodule mod_headers.c="">
-        SetEnvIf Origin "^(.*\.ivrylobs.github.io/)$" ORIGIN_SUB_DOMAIN=$1
-        Header set Access-Control-Allow-Origin "%{ORIGIN_SUB_DOMAIN}e" env=ORIGIN_SUB_DOMAIN
-        Header set Access-Control-Allow-Methods: "*"
-        Header set Access-Control-Allow-Headers: "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-     </ifmodule>
-     
     <title>Document</title>
 </head>
 <body>
@@ -42,6 +35,10 @@
                 //Append text
                 textName.textContent = "name = " + response[i].name
                 textLocation.textContent = "Location = " + lat + " " + lng
+
+                //Set style
+                textName.style.color = "blue"
+                textLocation.style.color = "green"
                 
                 //Append elements
                 listItem.appendChild(textName)
