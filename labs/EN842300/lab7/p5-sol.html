@@ -8,7 +8,8 @@
 		<h1>My Book List</h1>
 		<div id="books_list">Click to generate my book list</div>
 		<script>
-            var orderedList = document.createElement("ol")
+			var orderedList = document.createElement("ol");
+			var clickGenerate = document.getElementById("books_list")
 			var books = [
 				{
 					title: "Sapiens: A Brief History of Humankind",
@@ -23,22 +24,31 @@
 				}
 			];
 
-			for (var i = 0; i < books.length; i++) {
-                //Create elements for orderedList.
-                var bookList = document.createElement("li")
-                var bookText = document.createElement("p")
-                
-                //Set as innerHTML.
-                bookText.innerHTML = '<a target="blank" href="' + books[i].url + '">' + books[i].title + '</a> by ' + books[i].author
+			function addContent() {
+				for (var i = 0; i < books.length; i++) {
+					//Create elements for orderedList.
+					var bookList = document.createElement("li");
+					var bookText = document.createElement("p");
 
-                //Append to each parent.
-                bookList.appendChild(bookText)
-                orderedList.appendChild(bookList)
-            }
+					//Set as innerHTML.
+					bookText.innerHTML =
+						'<a target="blank" href="' +
+						books[i].url +
+						'">' +
+						books[i].title +
+						"</a> by " +
+						books[i].author;
 
-            //Append to orderedList.
-            document.body.appendChild(orderedList)
+					//Append to each parent.
+					bookList.appendChild(bookText);
+					orderedList.appendChild(bookList);
+				}
 
+				//Append to orderedList.
+				document.body.appendChild(orderedList);
+			}
+
+			clickGenerate.addEventListener("click", addContent)
 		</script>
 	</body>
 </html>
