@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<button>Stop</button>
+		<p id="stopwatch-display"></p>
+
+		<script>
+			var display = document.getElementById("stopwatch-display");
+			var stopWatchBtn = document.querySelector("button");
+			var timeCount = 0;
+			var myStopWatch = setInterval(timer, 1000);
+
+			stopWatchBtn.addEventListener("click", function(event) {
+                window.clearInterval(myStopWatch)
+            });
+
+			function timer() {
+				timeCount += 1;
+				display.textContent = timeCount + " seconds you have gone by";
+			}
+
+			display.textContent = "0 seconds you have gone by";
+		</script>
+	</body>
+</html>
