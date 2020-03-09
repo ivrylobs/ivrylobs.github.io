@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab8 Problem 5</title>
+</head>
+<body>
+    <div style="background-color: red; width: 250px; height: 250px;"></div>
+
+    <script>
+        function changeColor() {
+            if (document.querySelector("div").style.backgroundColor == "blue") {
+                document.querySelector("div").style.backgroundColor = "red"
+            } else {
+                document.querySelector("div").style.backgroundColor = "blue"
+            }
+            
+        }
+
+        var makeItChangeColor = setInterval(changeColor, 2000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab8 Problem 1</title>
+</head>
+<body>
+    <div>
+        <label for="">What's your name?
+            <input type="text" id="name">
+        </label>
+        <br>
+        <label for="">What language do you speak?
+            <select id="lang">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="plt">Pig-latin</option>
+            </select>
+        </label>
+        <br>
+        <button id="button" type="button">Greet me, please!</button>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        var nameInput = document.getElementById("name")
+        var langSelector = document.getElementById("lang")
+        var greetBtn = document.getElementById("button")
+        var messageDisplay = document.getElementById("message")
+
+        greetBtn.addEventListener("click", function() {
+            if (langSelector.value == "en") {
+                messageDisplay.textContent = "Hello, " + nameInput.value
+            } else if (langSelector.value == "es") {
+                messageDisplay.textContent = "Hola, " + nameInput.value
+            } else if (langSelector.value == "plt") {
+                messageDisplay.textContent = "Ello-hay, " + nameInput.value
+            }
+        })
+    </script>
+</body>
+</html>
