@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab8 Problem 5</title>
-</head>
-<body>
-    <div style="background-color: red; width: 250px; height: 250px;"></div>
 
-    <script>
-        function changeColor() {
-            if (document.querySelector("div").style.backgroundColor == "blue") {
-                document.querySelector("div").style.backgroundColor = "red"
-            } else {
-                document.querySelector("div").style.backgroundColor = "blue"
-            }
-            
+    <style>
+        div {
+            background-color: red;
+            width: 250px;
+            height: 250px;
+            animation-name: changeColorAnimate;
+            animation-duration: 2s;
+            animation-delay: -2s;
+            animation-iteration-count: infinite;
         }
 
-        var makeItChangeColor = setInterval(changeColor, 2000)
-    </script>
+        @keyframes changeColorAnimate {
+           from {
+               background-color: red;
+           }
+           to {
+               background-color: blue;
+           }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+   
 </body>
 </html>
