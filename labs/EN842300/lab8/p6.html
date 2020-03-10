@@ -4,51 +4,27 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Lab8 Problem 6</title>
-	</head>
-	<body>
-		<div style="background-color: red; width: 250px; height: 250px;"></div>
 
-		<script>
-			var animateDistance = 0;
-			var redColor = 100;
-			var yellowColor = 100;
-
-			function changeColor() {
-				animateDistance += 10;
-				if (animateDistance > 250) {
-					animateDistance = 0;
-					document.querySelector("div").style.background = "red";
-					redColor = 100
-					yellowColor = 100
-				}
-
-				document.querySelector("div").style.marginLeft =
-					animateDistance + "px";
-
-				if (animateDistance >= 200) {
-					document.querySelector("div").style.background =
-						"yellow";
-				} else {
-
-					if (redColor > 0) {
-						redColor -= 10;
-					} else {
-                        redColor = 0
-						yellowColor -= 10;
-					}
-					console.log(redColor, yellowColor, animateDistance)
-
-					
-					document.querySelector("div").style.background =
-						"linear-gradient(to right, red " +
-						redColor +
-						"%, yellow " +
-						yellowColor +
-						"%)";
-				}
+		<style>
+			div {
+				background-color: red;
+				width: 250px;
+				height: 250px;
+				animation-name: changeColorAnimate;
+				animation-delay: -1s;
+				animation-duration: 5s;
+				animation-iteration-count: infinite;
 			}
 
-			var makeItChangeColor = setInterval(changeColor, 1000);
-		</script>
+			@keyframes changeColorAnimate {
+				0% {background-color: red; margin-left: 0px;}
+				100% {background-color: yellow; margin-left: 200px;}
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+
+		
 	</body>
 </html>
