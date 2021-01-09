@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab8 Problem 2</title>
+</head>
+<body>
+    <h1>Mad Libs</h1>
+    <ul>
+        <li>
+            <label for="">Noun: <input id="noun" type="text"></label>
+        </li>
+        <li>
+            <label for="">Adjective: <input id="adjective" type="text"></label>
+        </li>
+        <li>
+            <label for="">Someone's Name: <input id="someone" type="text"></label>
+        </li>
+    </ul>
+
+    <button>Lib it!</button>
+
+    <p id="display"></p>
+
+    <script>
+        var noun = document.getElementById("noun")
+        var adjective = document.getElementById("adjective")
+        var someone = document.getElementById("someone")
+        var libBtn = document.querySelector("button")
+        var messageDisplay = document.getElementById("display")
+
+        libBtn.addEventListener("click", function() {
+            messageDisplay.textContent = "Generated story: " + someone.value + " is " + adjective.value + " and love to eat "  + noun.value
+        })
+    </script>
+</body>
+</html>
