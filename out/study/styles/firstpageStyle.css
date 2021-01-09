@@ -1,0 +1,26 @@
+body {
+    background-color: saddlebrown;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    margin-left: 10px;
+}
+
+img.center {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+div {
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    margin: auto;
+    background-color: azure;
+    border: 5px solid black;
+    width: 500px;
+}
