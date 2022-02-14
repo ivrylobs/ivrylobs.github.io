@@ -15,5 +15,6 @@
 <script>
 export default {
   name: 'IndexPage',
+  target: 'static',
 }
 </script>
