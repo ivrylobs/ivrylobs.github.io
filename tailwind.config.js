@@ -5,7 +5,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      name: ["Silkscreen", "cursive"],
+      jp: ["Noto Sans JP", "sans-serif"],
+      raleway: ["Raleway", "sans-serif"],
+    },
     extend: {},
   },
   plugins: [],
-}
+};
