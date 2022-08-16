@@ -77,7 +77,7 @@ const Home: NextPage = () => {
                         <button
                           onClick={openConnectModal}
                           type="button"
-                          className="flex items-center bg-zinc-800 text-zinc-50 drop-shadow-xl p-2 rounded-[11px]"
+                          className="flex h-10 text-sm items-center bg-zinc-800 text-zinc-50 drop-shadow-xl p-2 rounded-[11px]"
                         >
                           <Icon icon="bxs:wallet" className="w-5 h-5 mr-1" />
                           Connect Wallet
@@ -90,7 +90,7 @@ const Home: NextPage = () => {
                         <button
                           onClick={openChainModal}
                           type="button"
-                          className="flex items-center bg-red-600 text-zinc-50 drop-shadow-xl p-2 rounded-[11px]"
+                          className="flex h-10 text-sm items-center bg-red-600 text-zinc-50 drop-shadow-xl p-2 rounded-[11px]"
                         >
                           <Icon
                             icon="akar-icons:circle-alert-fill"
@@ -102,7 +102,7 @@ const Home: NextPage = () => {
                     }
 
                     return (
-                      <div className="text-ellipsis overflow-hidden flex h-10 items-center gap-1 pl-3  rounded-[11px] text-zinc-50 drop-shadow-xl bg-zinc-700">
+                      <div className="text-ellipsis overflow-hidden flex h-10 items-center gap-1 pl-2  rounded-[11px] text-zinc-50 drop-shadow-xl bg-zinc-700 text-sm">
                         <button
                           onClick={openChainModal}
                           style={{ display: "flex", alignItems: "center" }}
@@ -119,19 +119,27 @@ const Home: NextPage = () => {
                               }}
                             />
                           )}
-                          {chain.name}
+                          <div className="md:hidden">
+                            {" "}
+                            {account.displayBalance
+                              ? ` (${account.displayBalance})`
+                              : ""}
+                          </div>
+                          <div className="hidden md:flex">{chain.name}</div>
                         </button>
 
                         <button
                           onClick={openAccountModal}
                           type="button"
-                          className="text-ellipsis overflow-hidden flex items-center bg-zinc-800 text-zinc-50 p-2 rounded-[11px]"
+                          className="text-ellipsis text-sm h-10 overflow-hidden flex items-center bg-zinc-800 text-zinc-50 p-2 rounded-[11px]"
                         >
                           <Icon icon="bxs:wallet" className="w-5 h-5 mr-1" />
                           {account.displayName}
-                          {account.displayBalance
-                            ? ` (${account.displayBalance})`
-                            : ""}
+                          <div className="hidden md:flex">
+                            {account.displayBalance
+                              ? ` (${account.displayBalance})`
+                              : ""}
+                          </div>
                         </button>
                       </div>
                     );
@@ -179,7 +187,7 @@ function DonateSection() {
     <div className="flex items-center">
       <button
         disabled={!isConnected}
-        className="flex items-center bg-rose-400 drop-shadow-xl disabled:drop-shadow-none text-zinc-800 text-md p-2 rounded-[11px] disabled:bg-rose-100 disabled:text-zinc-400 font-bold mx-4"
+        className="flex h-10 items-center bg-rose-400 drop-shadow-xl disabled:drop-shadow-none text-zinc-800 text-sm p-2 rounded-[11px] disabled:bg-rose-100 disabled:text-zinc-400 font-bold mr-2"
         onClick={() => sendTransaction?.()}
       >
         Donate
