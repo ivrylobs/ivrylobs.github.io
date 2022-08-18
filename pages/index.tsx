@@ -10,6 +10,7 @@ import {
   useSendTransaction,
 } from "wagmi";
 import { parseEther } from "ethers/lib/utils";
+import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
   const { isConnected } = useAccount();
@@ -183,10 +184,17 @@ function DonateSection() {
   });
   const { sendTransaction } = useSendTransaction(config);
 
+  const [disabledBtn, setDisabledBtn] = useState(true);
+
+  useEffect(() => {
+    if (isConnected) setDisabledBtn(false);
+    else setDisabledBtn(true);
+  }, [isConnected]);
+
   return (
     <div className="flex items-center">
       <button
-        disabled={!isConnected}
+        disabled={disabledBtn}
         className="flex h-10 items-center bg-rose-400 drop-shadow-xl disabled:drop-shadow-none text-zinc-800 text-sm p-2 rounded-[11px] disabled:bg-rose-100 disabled:text-zinc-400 font-bold mr-2"
         onClick={() => sendTransaction?.()}
       >
